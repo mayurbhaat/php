@@ -305,7 +305,7 @@ while($row=mysqli_fetch_array($result)){
 <!-- The Modal -->
 <div class="modal" id="edit<?php echo $row['id']?>">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content"> 
   
         <!-- Modal Header -->
         <div class="modal-header">

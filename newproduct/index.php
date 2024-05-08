@@ -1,3 +1,9 @@
+<?php
+include 'admin/coon.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,14 +65,29 @@
 <div class="container">
 
   <div class="row">
+
+
+  <?php
+                
+                $sql="SELECT `id`, `image`, `pname`, `pcat`, `dprice`, `price` FROM `product` WHERE 1";
+
+                $result=mysqli_query($con,$sql);
+
+                while($row=mysqli_fetch_array($result)){
+                    ?>
+
     <div class="col-md-4">
-      <h1>women</h1>
-      <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class <br> aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. <br> Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed ut.</p>
-      <img src="img/product-accessory2-300x300.jpg" alt="" style="height: 300px;width:80%;">
-      <h5>anchor bracelet</h5>
-      <h6>accessories</h6>
-      <p>$150.00-$180.00</p>
+     
+      <img src="admin/img/<?php echo $row['image']?>" alt="" style="height: 300px;width:80%;">
+      <h5><?php echo $row['pname']?></h5>
+      <h6><?php echo $row['pcat']?></h6>
+      <p>$<?php echo $row['dprice']?>.00-$<?php echo $row['price']?>.00</p>
     </div>
+
+
+<?php
+                }
+?>
    
   </div>
 </div>

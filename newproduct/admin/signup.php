@@ -1,3 +1,18 @@
+
+<?php
+
+include 'coon.php';
+
+if(!isset($_SESSION['signin'])){
+    echo "<script>location.href='signin.php'</script>";
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,18 +66,20 @@
                             <a href="index.html" class="">
                                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
                             </a>
+
+                       <form method="post">   
                             <h3>Sign Up</h3>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="jhondoe">
+                            <input type="text" name="username" class="form-control" id="floatingText" placeholder="jhondoe">
                             <label for="floatingText">Username</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input type="email"  name="email"  class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -72,14 +89,63 @@
                             </div>
                             <a href="">Forgot Password</a>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
-                        <p class="text-center mb-0">Already have an Account? <a href="">Sign In</a></p>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="signup">Sign Up</button>
+
+                    </form>                
+
+                        <p class="text-center mb-0">Already have an Account? <a href="signin.php">Sign In</a></p>
                     </div>
                 </div>
             </div>
         </div>
+   
         <!-- Sign Up End -->
     </div>
+
+
+<?php
+
+if(isset($_POST['signup'])){
+
+    $username=$_POST['username'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    
+    $sql="INSERT INTO `sign`(`username`, `emailaddress`, `password`) VALUES ('$username','$email','$password')";
+   
+    $result=mysqli_query($con,$sql);
+   
+  
+   
+    if($result){
+   
+      echo"<script>alert('success')</script>";
+      
+    }
+    else{
+       echo"<script>alert('error')</script>";
+    }
+   
+
+
+}
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

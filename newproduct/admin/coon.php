@@ -14,6 +14,6 @@ $con=mysqli_connect($servername,$username,$password,$databasname);
 //     echo"<script>alert('error')</script>" ;
 // }
 
-
+session_start();
 
 ?>
