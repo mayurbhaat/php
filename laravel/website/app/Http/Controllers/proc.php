@@ -68,4 +68,31 @@ class proc extends Controller
     return redirect('show');
 
     }
+
+    
+    function webshow(){
+
+        $sql=prom::where('category','AC')->get();
+        $sql1=prom::where('category','TV')->get();
+        $sql2=prom::where('category','game')->get();
+        $sql3=prom::where('category','phone')->get();
+        $sql4=prom::where('category','laptop')->get();
+        $sql5=prom::where('category','Refrigerator')->get();
+        return view('index',compact('sql','sql1','sql2','sql3','sql4','sql5'));    
+        }
+
+
+        function search(request $req){
+$search=$req->get('sea');
+
+$sql=prom::query()->where('name','LIKE',"%{$search}%")->get();
+$sql1=prom::query()->where('name','LIKE',"%{$search}%")->get();
+$sql2=prom::query()->where('name','LIKE',"%{$search}%")->get();
+$sql3=prom::query()->where('name','LIKE',"%{$search}%")->get();
+$sql4=prom::query()->where('name','LIKE',"%{$search}%")->get();
+$sql5=prom::query()->where('name','LIKE',"%{$search}%")->get();
+
+return view('index',compact('sql','sql1','sql2','sql3','sql4','sql5'));
+
+        }
 }

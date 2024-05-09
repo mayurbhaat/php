@@ -205,7 +205,10 @@
     </div>
  </div>
 
-
+<form action="search" method="get">
+  <input type="text" name="sea">
+  <button>searching</button>
+</form>
 
 <!-- backend start -->
 
@@ -215,16 +218,32 @@
         <div class="col-md-10 border p-5">
 <h1>Today’s best deal
    <span><b class="text-primary fs-5"> See more</b></span></h1>
+
+
+
+<div class="row">
+   @foreach($sql as $row)
+
+
    <div class="col-md-3 mt-5">
-    <img src="img/electronic-store-product-image-27-300x300.jpg" class="col-md-12"> 
+    <img src="Product/{{$row->image}}" class="col-md-12"> 
     <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
     <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
     <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
     <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
     <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
-    <h6>Multigroomer All-in-One <br>Trimmer Series 5000, 23 <br>Piece Mens Grooming Kit</h6>
-    <h6><del style="color:grey">$49.00</del>$44.00</h6>
+    <h6 style="color:purple">{{$row->name}}</h6>
+    <h6><del style="color:grey">₹{{$row->deleteprice}} </del>₹{{$row->originalprice}}</h6>
   </div>
+
+
+
+@endforeach
+
+</div>
+
+
+
 
      
         </div>    
@@ -232,6 +251,193 @@
 
     </div>      
 </div>      
+
+
+
+
+<!-- phone -->
+
+
+
+
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 border p-5">
+<h1>Phone
+ <span><b class="text-primary fs-5"> See more</b></span></h1>
+
+
+
+<div class="row">
+ @foreach($sql3 as $row)
+
+
+ <div class="col-md-3 mt-5">
+  <img src="Product/{{$row->image}}" class="col-md-12"> 
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <h6 style="color:purple">{{$row->name}}</h6>
+  <h6><del style="color:grey">₹{{$row->deleteprice}} </del>₹{{$row->originalprice}}</h6>
+</div>
+
+
+
+@endforeach
+
+</div>
+
+
+
+
+   
+      </div>    
+      <div class="col-md-1"></div>
+
+  </div>      
+</div>      
+
+
+
+
+
+
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 border p-5">
+<h1>TV
+ <span><b class="text-primary fs-5"> See more</b></span></h1>
+
+
+
+<div class="row">
+ @foreach($sql1 as $row)
+
+
+ <div class="col-md-3 mt-5">
+  <img src="Product/{{$row->image}}" class="col-md-12"> 
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <h6 style="color:purple">{{$row->name}}</h6>
+  <h6><del style="color:grey">₹{{$row->deleteprice}} </del>₹{{$row->originalprice}}</h6>
+</div>
+
+
+
+@endforeach
+
+</div>
+
+
+
+
+   
+      </div>    
+      <div class="col-md-1"></div>
+
+  </div>      
+</div>      
+
+
+
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 border p-5">
+<h1>GAME
+ <span><b class="text-primary fs-5"> See more</b></span></h1>
+
+
+
+<div class="row">
+
+ @foreach($sql2->slice(1,2) as $row)
+
+
+ <div class="col-md-3 mt-5">
+  <img src="Product/{{$row->image}}" class="col-md-12"> 
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <h6 style="color:purple">{{$row->name}}</h6>
+  <h6><del style="color:grey">₹{{$row->deleteprice}} </del>₹{{$row->originalprice}}</h6>
+</div>
+
+
+
+@endforeach
+
+</div>
+
+
+
+
+   
+      </div>    
+      <div class="col-md-1"></div>
+
+  </div>      
+</div>      
+
+
+
+<!-- laptop -->
+
+
+
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 border p-5">
+<h1>laptop
+ <span><b class="text-primary fs-5"> See more</b></span></h1>
+
+
+
+<div class="row">
+
+ @foreach($sql4->slice(1,3) as $row)
+
+
+ <div class="col-md-3 mt-5">
+  <img src="Product/{{$row->image}}" class="col-md-12"> 
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <h6 style="color:purple">{{$row->name}}</h6>
+  <h6><del style="color:grey">₹{{$row->deleteprice}} </del>₹{{$row->originalprice}}</h6>
+</div>
+
+
+
+@endforeach
+
+</div>
+
+
+
+
+   
+      </div>    
+      <div class="col-md-1"></div>
+
+  </div>      
+</div>      
+
+
+
+
 
 </body>
 </html>

@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <button class=" btn btn-info"><a href="/">insert</a></button>   
-<div class="container">
+<body style="background-color: gray;">
+    <button class=" btn btn-info" style="background-image: url(forest_landscape_hills_grass_field_trees_water_reflection_lake_wallpaper_blue_sky_background_4k_hd_nature-3840x2160.jpg);"><a href="in">insert</a></button>   
+<div class="container" >
 <div class="row">
  <div class="col-md-12"> 
 <table class="table table-bordered">
@@ -37,7 +37,7 @@
     <td>{{$row->category}}</td>
     <td>{{$row->deleteprice}}</td>
     <td>{{$row->originalprice}}</td>
-    <td><a href="delete/{{$row->id}}"><button>delete</button></a></td>
+    <td class=""><a href="delete/{{$row->id}}"><button>delete</button></a></td>
     <td><a href="update/{{$row->id}}"><button>update</button></a></td>
     
 
